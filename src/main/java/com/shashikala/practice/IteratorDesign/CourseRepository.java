@@ -11,19 +11,19 @@ public class CourseRepository {
     }
 
     public Iterator createIterator(){
-        return new CourseIterator();
+        return new CourseIterator(courses);
     }
 
-    private class CourseIterator implements Iterator{
-        private int position=0;
-        @Override
-        public boolean hasNext() {
-            return position<courses.length && courses[position]!=null;
-        }
-
-        @Override
-        public Object next() {
-            return courses[position++];
-        }
-    }
+//    private class CourseIterator implements Iterator{
+//        private int position=0;
+//        @Override
+//        public boolean hasNext() {
+//            return position<courses.length && courses[position]!=null;
+//        }
+//
+//        @Override
+//        public Object next() {
+//            return courses[position++];
+//        }
+//    }
 }
