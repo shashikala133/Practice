@@ -1,9 +1,17 @@
 package com.shashikala.practice.observerPattern;
 
-public class Observer {
+public class GoldTrackerApp implements IObserver {
 
     private int goldPrice;
 
+    private Gold gold;
+
+    public GoldTrackerApp(Gold gold) {
+        this.gold = gold;
+        gold.add(this);
+    }
+
+    @Override
     public void updatePrice(int price) {
         this.goldPrice=price;
         displayPrice();

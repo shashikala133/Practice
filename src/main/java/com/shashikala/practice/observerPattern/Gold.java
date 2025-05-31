@@ -3,28 +3,29 @@ package com.shashikala.practice.observerPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Subject {
+public class Gold implements ISubject {
 
     private int price=1000;
 
-    private List<Observer> observerList=new ArrayList<>();
+    private List<IObserver> observerList=new ArrayList<>();
+
 
     public void setPrice(int price){
         this.price=price;
         notifyAllObserver();
     }
 
-    private void notifyAllObserver() {
-        for(Observer observer:observerList){
-            observer.updatePrice(price);
+    public void notifyAllObserver() {
+        for(IObserver Observer :observerList){
+            Observer.updatePrice(price);
         }
     }
 
-    public void add(Observer observer){
+    public void add(IObserver observer){
         observerList.add(observer);
     }
 
-    public void unsubscribe(Observer observer2) {
+    public void unsubscribe(IObserver observer2) {
         observerList.remove(observer2);
     }
 }
