@@ -17,7 +17,9 @@ public class CompleatableFutureDemo {
     public static void main(String[] args) throws InterruptedException {
         CompleatableFutureDemo compleatableFutureDemo=new CompleatableFutureDemo();
 
-        CompletableFuture.supplyAsync(()->compleatableFutureDemo.getName()).thenAccept(s-> System.out.println(s));
+        CompletableFuture.supplyAsync(()->compleatableFutureDemo.getName())
+                .thenApply(str->str.toUpperCase())
+                .thenAccept(s-> System.out.println(s));
         //get or join blocking the main thread
         System.out.println("done");
         Thread.sleep(30000);
