@@ -9,6 +9,6 @@ public class GreenLight implements TrafficLightState {
 
     @Override
     public String getColour() {
-        return "GREEN";
+        return "GREEN LIGHT";
     }
 }

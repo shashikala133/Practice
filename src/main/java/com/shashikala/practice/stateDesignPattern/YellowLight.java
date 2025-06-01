@@ -9,6 +9,6 @@ public class YellowLight implements TrafficLightState{
 
     @Override
     public String getColour() {
-        return "YELLOW";
+        return "YELLOW LIGHT";
     }
 }
