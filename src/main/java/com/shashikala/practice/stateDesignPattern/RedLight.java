@@ -9,6 +9,7 @@ public class RedLight implements TrafficLightState{
 
     @Override
     public String getColour() {
+        System.out.println("red light");
         return "RED LIGHT";
     }
 }
