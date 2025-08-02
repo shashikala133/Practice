@@ -1,12 +1,8 @@
 package com.shashikala.practice.tictactoeSimple;
-
 import java.util.Scanner;
-
 public class Game {
     public static void main(String[] args) {
         Board board=new Board(3);
-
-
         Scanner sc=new Scanner(System.in);
         System.out.println("enter player 1 name: ");
         Player player1=new Player(sc.next(),'X');
