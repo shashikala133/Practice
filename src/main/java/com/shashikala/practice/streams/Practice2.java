@@ -34,6 +34,8 @@ public class Practice2 {
         System.out.println(i);
 //
 //Return a map of first letter to count of strings starting with it
+        Map<String, Long> collect1 = strings1.stream().map(s -> s.substring(0, 1)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(collect1);
     }
 
     public static boolean isPalindrome(String s){
