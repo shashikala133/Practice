@@ -128,6 +128,16 @@ public class Practice3 {
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(collect);
 
+        List<String> strings = Arrays.asList("apple", "banana", "apple", "cherry", "banana", "date");
+        Integer collect1 = strings.stream().collect(Collectors.mapping(String::length, Collectors.summingInt(Integer::intValue)));
+        System.out.println(collect1);
+
+        List<Integer> collect2 = strings.stream().collect(Collectors.mapping(String::length, Collectors.toList()));
+        Integer i = collect2.stream().reduce((a, b) -> a + b).get();
+        System.out.println(i);
+    // if in case you have product as a list<Product> inside Order and you want get product related details
+        // then use flatMap(order->order.getProduct().stream()).collect(Collectors.mapping(Product::getName(),Collectors.toList());
+
 
     }
 }
